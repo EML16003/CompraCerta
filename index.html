@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompraCerta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Título do aplicativo -->
+        <h1>CompraCerta</h1>
+        
+        <!-- Área de inserção de dados - tudo na mesma linha -->
+        <div class="input-group">
+            <!-- Campo do nome do produto -->
+            <input type="text" id="taskInput" placeholder="Produto..." autofocus>
+            <!-- Campo da quantidade -->
+            <input type="number" id="quantityInput" placeholder="Qtd" min="1" value="1">
+            <!-- Seleção da categoria -->
+            <select id="categorySelect">
+                <option value="Cereais">Cereal</option>
+                <option value="Proteína">Proteína</option>
+                <option value="Frutas">Fruta</option>
+                <option value="Vegetais">Vegetal</option>
+                <option value="Condimentos">Condimento</option>
+                <option value="Limpeza">Limpeza</option>
+                <option value="Outros">Outros</option>
+            </select>
+            <!-- Campo de preço unitário -->
+            <input type="number" id="priceInput" placeholder="Preço R$" min="0" step="0.01">
+            <!-- Botão adicionar -->
+            <button id="addBtn">Adicionar</button>
+        </div>
+
+        <!-- Lista de itens adicionados -->
+        <ul id="taskList"></ul>
+
+        <!-- Área de orçamento, total e saldo -->
+        <div class="budget-group">
+            <label for="budgetInput">Valor disponível: R$ </label>
+            <input type="number" id="budgetInput" placeholder="Ex: 1000.00" min="0" step="0.01" value="1000">
+            <span id="totalDisplay">Total da compra: R$ 0,00</span>
+            <span id="balanceDisplay">Saldo: R$ 0,00</span>
+        </div>
+
+        <!-- Exibição de hora e data -->
+        <div class="datetime-group">
+            <span id="dateTimeDisplay"></span>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>
