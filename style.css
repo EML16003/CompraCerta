@@ -1,0 +1,193 @@
+/* Cores e tema */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --accent-color: #4CAF50;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #f0f0f0;
+        --accent-color: #47e447;
+    }
+}
+
+/* Estilo geral do corpo e container */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 400px; /* Compacto para celular */
+    margin: 20px auto;
+    padding: 15px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Área de inserção de dados horizontal */
+.input-group {
+    display: flex;
+    flex-wrap: nowrap; /* Mantém todos na mesma linha */
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+/* Campos de entrada ajustados para caber na linha */
+.input-group input[type="text"]#taskInput {
+    flex: 1;        /* Nome do produto médio */
+    padding: 5px;
+    font-size: 14px;
+}
+
+.input-group input[type="number"]#quantityInput {
+    width: 30px;      /* Quantidade pequena */
+    padding: 5px;
+    font-size: 14px;
+}
+
+.input-group select#categorySelect {
+    flex: 0.8;      /* Categoria média */
+    padding: 5px;
+    font-size: 14px;
+}
+
+.input-group input[type="number"]#priceInput {
+    width: 80px;      /* Preço compacto */
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Botão adicionar */
+.input-group button#addBtn {
+    flex: 0.6;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-group button#addBtn:hover {
+    opacity: 0.6;
+}
+
+/* Lista de itens */
+ul#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+li {
+    padding: 6px;
+    margin-bottom: 6px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Item marcado como comprado */
+li.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Botão marcar/comprado - azul escuro */
+.btn-done {
+    background-color: #2196F3;
+    border-radius: 5px;
+    padding: 3px 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Botão editar - azul claro */
+.btn-edit {
+    background-color: #90caf9;
+    border-radius: 5px;
+    padding: 3px 6px;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Botão excluir - vermelho */
+.btn-delete {
+    background-color: #f44336;
+    border-radius: 5px;
+    padding: 3px 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+/* Detalhes do item na lista */
+.item-details {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+
+/* Área de orçamento e saldo */
+.budget-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.budget-group input#budgetInput {
+    padding: 4px;
+    width: 100px;
+    font-size: 14px;
+}
+
+.budget-group span {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* Área de data e hora */
+.datetime-group {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 360px) {
+    .input-group input, 
+    .input-group select, 
+    .input-group button {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .budget-group span {
+        font-size: 12px;
+    }
+    .item-details {
+        font-size: 12px;
+    }
+}
